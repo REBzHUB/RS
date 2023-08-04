@@ -8,6 +8,12 @@
         Frosty - GUI to Lua
 ]]
 
+--[[
+
+  Modification Made By - REDz
+  
+]]
+
 -- shuts down the previous instance of SimpleSpy
 if _G.SimpleSpyExecuted and type(_G.SimpleSpyShutdown) == "function" then
 	print(pcall(_G.SimpleSpyShutdown))
@@ -51,6 +57,9 @@ local MinimizeButton = Instance.new("TextButton")
 local ImageLabel_3 = Instance.new("ImageLabel")
 local ToolTip = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
+local gui = Instance.new("ScreenGui",Background)
+local nextb = Instance.new("ImageButton", gui)
+local gui = Instance.new("UICorner", nextb)
 
 --Properties:
 
@@ -61,10 +70,21 @@ Background.Name = "Background"
 Background.Parent = SimpleSpy2
 Background.BackgroundColor3 = Color3.new(1, 1, 1)
 Background.BackgroundTransparency = 1
-Background.Position = UDim2.new(0, 500, 0, 200)
+Background.Position = UDim2.new(0, 160, 0, 100)
 Background.Size = UDim2.new(0, 450, 0, 268)
 Background.Active = true
 Background.Draggable = true
+
+nextb.Position = UDim2.new(0,100,0,60)
+nextb.Size = UDim2.new(0,40,0,40)
+nextb.BackgroundColor3 = Color3.fromRGB(53, 52, 55)
+nextb.Image = "rbxassetid://7072720870"
+nextb.Active = true
+nextb.Draggable = true
+nextb.MouseButton1Down:connect(function()
+nextb.Image = (Background.Visible and "rbxassetid://7072720870") or "rbxassetid://7072719338"
+Background.Visible = not Background.Visible
+end)
 
 LeftPanel.Name = "LeftPanel"
 LeftPanel.Parent = Background
