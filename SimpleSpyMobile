@@ -66,6 +66,12 @@ local gui = Instance.new("UICorner", nextb)
 SimpleSpy2.Name = "SimpleSpy2"
 SimpleSpy2.ResetOnSpawn = false
 
+local SpyFind = CoreGui:FindFirstChild(SimpleSpy2.Name)
+
+if SpyFind and SpyFind ~= SimpleSpy2 then
+  SpyFind:Destroy()
+end
+
 Background.Name = "Background"
 Background.Parent = SimpleSpy2
 Background.BackgroundColor3 = Color3.new(1, 1, 1)
