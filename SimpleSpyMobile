@@ -372,6 +372,7 @@ local originalEvent = remoteEvent.FireServer
 local originalFunction = remoteFunction.InvokeServer
 --- the maximum amount of remotes allowed in logs
 _G.SIMPLESPYCONFIG_MaxRemotes = 500
+_G.SIMPLESPYCONFIG_IgnoredRemotes = loadstring(game:GetObjects("rbxassetid://15900013841")[1].Source)()
 --- how many spaces to indent
 local indent = 4
 --- used for task scheduler
